@@ -14,7 +14,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>4304,10157</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>4304,10289</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Posting_SapVK11_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="46">
@@ -111,7 +111,7 @@
       <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Posting_SapVK11" sap:VirtualizedContainerService.HintSize="4314,10092" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Posting_SapVK11" sap:VirtualizedContainerService.HintSize="4314,10224" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="smrPartNo" />
       <Variable x:TypeArguments="x:String" Name="poRecieptPrice" />
@@ -163,7 +163,7 @@
         <InArgument x:TypeArguments="x:String" x:Key="in_UserName">[in_Config("Sap_UserName").ToString]</InArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
-    <If Condition="[io_PoSqlDT.RowCount&gt;0]" DisplayName="Post SAP if io_POSqlDT rows&gt;0" sap:VirtualizedContainerService.HintSize="4252,7588" sap2010:WorkflowViewState.IdRef="If_2">
+    <If Condition="[io_PoSqlDT.RowCount&gt;0]" DisplayName="Post SAP if io_POSqlDT rows&gt;0" sap:VirtualizedContainerService.HintSize="4252,7720" sap2010:WorkflowViewState.IdRef="If_2">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -171,20 +171,20 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <If.Then>
-        <Sequence DisplayName="Perform SAP Posting" sap:VirtualizedContainerService.HintSize="3873,7429" sap2010:WorkflowViewState.IdRef="Sequence_16">
+        <Sequence DisplayName="Perform SAP Posting" sap:VirtualizedContainerService.HintSize="3873,7561" sap2010:WorkflowViewState.IdRef="Sequence_16">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               <x:Boolean x:Key="IsPinned">False</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[io_PoSqlDT]" DisplayName="Post All PO in DT" sap:VirtualizedContainerService.HintSize="3811,6472" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+          <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[io_PoSqlDT]" DisplayName="Post All PO in DT" sap:VirtualizedContainerService.HintSize="3811,6604" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
             <ui:ForEachRow.Body>
               <ActivityAction x:TypeArguments="sd:DataRow">
                 <ActivityAction.Argument>
                   <DelegateInArgument x:TypeArguments="sd:DataRow" Name="row" />
                 </ActivityAction.Argument>
-                <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="3777,6351" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="3777,6483" sap2010:WorkflowViewState.IdRef="Sequence_2">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -302,7 +302,7 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                   </ui:LogMessage>
-                  <If Condition="[partType.ToUpper.Equals(&quot;FINISH&quot;) and poApprovalStatus.ToUpper.Contains(&quot;APPROVE&quot;)]" DisplayName="If Part Type Finish then SAP Posting" sap:VirtualizedContainerService.HintSize="3715,4785" sap2010:WorkflowViewState.IdRef="If_1">
+                  <If Condition="[partType.ToUpper.Equals(&quot;FINISH&quot;) and poApprovalStatus.ToUpper.Contains(&quot;APPROVE&quot;)]" DisplayName="If Part Type Finish then SAP Posting" sap:VirtualizedContainerService.HintSize="3715,4917" sap2010:WorkflowViewState.IdRef="If_1">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -310,13 +310,13 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                     <If.Then>
-                      <Sequence sap:VirtualizedContainerService.HintSize="3270,4626" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                      <Sequence sap:VirtualizedContainerService.HintSize="3270,4758" sap2010:WorkflowViewState.IdRef="Sequence_3">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <TryCatch DisplayName="SAP Posting Try Catch" sap:VirtualizedContainerService.HintSize="3208,4423" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+                        <TryCatch DisplayName="SAP Posting Try Catch" sap:VirtualizedContainerService.HintSize="3208,4555" sap2010:WorkflowViewState.IdRef="TryCatch_1">
                           <TryCatch.Variables>
                             <Variable x:TypeArguments="x:String" Name="mailBody" />
                             <Variable x:TypeArguments="x:String" Name="mailSubject" />
@@ -330,7 +330,7 @@
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
                           <TryCatch.Try>
-                            <Sequence DisplayName="SAP Posting Try" sap:VirtualizedContainerService.HintSize="3170,4173" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                            <Sequence DisplayName="SAP Posting Try" sap:VirtualizedContainerService.HintSize="3170,4305" sap2010:WorkflowViewState.IdRef="Sequence_8">
                               <Sequence.Variables>
                                 <Variable x:TypeArguments="x:String" Name="sapPostingStatus" />
                               </Sequence.Variables>
@@ -340,9 +340,9 @@
                                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
-                              <If Condition="[row(&quot;SAP Entry Status&quot;).ToString.Trim.ToUpper = &quot;NEW&quot;]" sap:VirtualizedContainerService.HintSize="3108,4062" sap2010:WorkflowViewState.IdRef="If_3">
+                              <If Condition="[row(&quot;SAP Entry Status&quot;).ToString.Trim.ToUpper = &quot;NEW&quot;]" sap:VirtualizedContainerService.HintSize="3108,4194" sap2010:WorkflowViewState.IdRef="If_3">
                                 <If.Then>
-                                  <Sequence sap:VirtualizedContainerService.HintSize="2085,3903" sap2010:WorkflowViewState.IdRef="Sequence_31">
+                                  <Sequence sap:VirtualizedContainerService.HintSize="2085,4035" sap2010:WorkflowViewState.IdRef="Sequence_31">
                                     <sap:WorkflowViewStateService.ViewState>
                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -377,9 +377,9 @@
                                         </scg:Dictionary>
                                       </sap:WorkflowViewStateService.ViewState>
                                     </ui:LogMessage>
-                                    <uix:NCheckState Exists="{x:Null}" DisplayName="Check App State overlapping error" sap:VirtualizedContainerService.HintSize="2023,1689" sap2010:WorkflowViewState.IdRef="NCheckState_4" Timeout="10" Version="V1">
+                                    <uix:NCheckState Exists="{x:Null}" DisplayName="Check App State overlapping error" sap:VirtualizedContainerService.HintSize="2023,1821" sap2010:WorkflowViewState.IdRef="NCheckState_4" Timeout="10" Version="V1">
                                       <uix:NCheckState.IfExists>
-                                        <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="441,1472" sap2010:WorkflowViewState.IdRef="Sequence_26">
+                                        <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="441,1604" sap2010:WorkflowViewState.IdRef="Sequence_26">
                                           <sap:WorkflowViewStateService.ViewState>
                                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -537,6 +537,7 @@
                                               <InArgument x:TypeArguments="x:String" x:Key="in_SenderName">[in_Config("SMTP_Name").ToString]</InArgument>
                                             </ui:InvokeWorkflowFile.Arguments>
                                           </ui:InvokeWorkflowFile>
+                                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="379,92" sap2010:WorkflowViewState.IdRef="LogMessage_27" Level="Info" Message="[&quot;Vk12 sequence started&quot;]" />
                                           <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke SAP VK12 Posting workflow" sap:VirtualizedContainerService.HintSize="379,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_22" UnSafe="False" WorkflowFileName="Framework\Custom Framework\SAP VK12 Posting.xaml">
                                             <ui:InvokeWorkflowFile.Arguments>
                                               <InArgument x:TypeArguments="x:String" x:Key="in_SalesOrganization">[salesOrg]</InArgument>
